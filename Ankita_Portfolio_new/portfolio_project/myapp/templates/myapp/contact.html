@@ -1,0 +1,84 @@
+{% extends 'myapp/base.html'%} {% load static %} {% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-warning mb-5 border-bottom">CONTACT US</h1>
+    <div class="row text-center text-white mb-5">
+        <p class="mx-auto mb-5">
+            Do you have questions? Please do not hesitate to Contact. I will come back to you within matter of hours to help you.
+
+        </p>
+        <div class="col-sm-9 mb-5">
+            <form method="post" action="/contact">
+                {% csrf_token %}
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+
+                        <label for="inputName">Your_Name</label>
+                        <input type="text" name="Name" class="form-control" id="inputName" />
+
+                    </div>
+
+                    <div class=" form-group col-md-6 ">
+
+                        <label for="inputName "> Your_Email*</label>
+                        <input type="email" name="Email" class="form-control" id="inputName" required/>
+                    </div>
+
+                </div>
+                <div class=" form-group ">
+
+                    <label for="inputSubject ">Your_Subject</label>
+                    <input type="text" name="Subject" class="form-control" id="inputSubject" />
+                </div>
+
+                <div class=" mb-3">
+                    <label for="inputSubject ">Your_Message *</label>
+                    <textarea class="form-control" name="Message"   id="inputTextarea" required></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Send</button>
+
+            </form>
+        </div>
+
+        <div class="col-sm-3 text-center">
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fas fa-map-marker-alt fa-2x i-colo"></i>
+                    <p>India</p>
+                </li>
+
+                <li>
+                    <i class="fas fa-phone mt-4 fa-2x i-colo"></i>
+                    <p>9033333333</p>
+                </li>
+
+                <li>
+                    <i class="fas fa-envelope mt-4 fa-2x i-colo"></i>
+                    <p>ghardeankita6@gmail.com</p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <a href="#" target="_blank">
+        <i class="fab fa-twitter i-colo mr-3"></i>
+    </a>
+
+    <a href="#" target="_blank">
+        <i class="fab fa-facebook i-colo mr-3"></i>
+    </a>
+
+    <a href="#" target="_blank">
+        <i class="fab fa-instagram i-colo mr-3"></i>
+    </a>
+    <a href="#" target="_blank">
+        <i class="fab fa-dribbble i-colo mr-3"></i>
+    </a>
+</div>
+
+{% endblock content %}
